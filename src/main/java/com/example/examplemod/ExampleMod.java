@@ -27,7 +27,7 @@ public class ExampleMod {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static Item fireSword = register(new FireSword( new Item.Properties().group(ItemGroup.COMBAT)));
+    static Item FIRE_SWORD = register(new FireSword( new Item.Properties().group(ItemGroup.COMBAT)));
 
     public ExampleMod() {
         // Register the setup method for modloading
@@ -47,8 +47,6 @@ public class ExampleMod {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-
-        fireSword = register(new FireSword( new Item.Properties().group(ItemGroup.COMBAT)));
 
     }
 
@@ -94,9 +92,5 @@ public class ExampleMod {
 
         }
 
-        @SubscribeEvent
-        public static void registerItems(RegistryEvent.Register<Item> event) {
-            event.getRegistry().registerAll(fireSword);
-        }
     }
 }

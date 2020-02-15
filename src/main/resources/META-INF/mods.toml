@@ -32,6 +32,30 @@ description='''
 This is a tutorial sword, which is a fire sword. When hitting enemies or animals, they start to burn.
 
 '''
+# dynamic lights
+[[dependencies.swordtutorial]] #optional
+    # the modid of the dependency
+    modId="dynamiclights" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=false #mandatory
+    # The version range of the dependency
+    versionRange="[1.13.2,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="CLIENT"
+# optifine
+[[dependencies.swordtutorial]] #optional
+    # the modid of the dependency
+    modId="optifine" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=false #mandatory
+    # The version range of the dependency
+    versionRange="[1.14,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="CLIENT"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.swordtutorial]] #optional
     # the modid of the dependency

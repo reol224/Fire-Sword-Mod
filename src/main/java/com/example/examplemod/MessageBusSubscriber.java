@@ -9,11 +9,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class CommonProxy {
+@SuppressWarnings("unused")
+public class MessageBusSubscriber {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-        registerRender(ExampleMod.FIRE_SWORD);
+        registerRender(SwordTutorialMod.FIRE_SWORD);
     }
 
     private static void registerRender(Item item) {
@@ -22,9 +23,8 @@ public class CommonProxy {
         );
     }
 
-
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(ExampleMod.FIRE_SWORD);
+        event.getRegistry().registerAll(SwordTutorialMod.FIRE_SWORD);
     }
 }

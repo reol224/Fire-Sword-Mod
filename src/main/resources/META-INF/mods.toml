@@ -33,7 +33,7 @@ This is a tutorial sword, which is a fire sword. When hitting enemies or animals
 
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.swordtutorial]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -45,7 +45,7 @@ This is a tutorial sword, which is a fire sword. When hitting enemies or animals
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.swordtutorial]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"

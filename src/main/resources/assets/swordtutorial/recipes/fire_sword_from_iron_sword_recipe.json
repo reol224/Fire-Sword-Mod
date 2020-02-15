@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_sword"
+    },
+    {
+      "item": "minecraft:lava_bucket"
+    }
+  ],
+  "result":
+  {
+    "item": "swordtutorial:flame_sword",
+    "count": 1
+  }
+}

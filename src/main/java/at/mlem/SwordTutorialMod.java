@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package at.mlem;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

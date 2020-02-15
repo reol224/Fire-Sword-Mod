@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package at.mlem;
 
 import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.item.Item;

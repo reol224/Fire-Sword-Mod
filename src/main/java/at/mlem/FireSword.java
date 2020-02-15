@@ -25,7 +25,7 @@ public class FireSword extends SwordItem {
     public FireSword(Properties builder) {
         super(ItemTier.DIAMOND, ATTACK_DAMAGE, ATTACK_SPEED, builder);
 
-        this.setRegistryName(REGISTRY_NAME);
+        this.setRegistryName(SwordTutorialMod.MOD_ID, REGISTRY_NAME);
 
     }
 

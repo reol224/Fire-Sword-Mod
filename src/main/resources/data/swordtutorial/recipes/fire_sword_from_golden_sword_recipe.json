@@ -1,8 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "group": "fire_sword",
   "ingredients": [
     {
-      "item": "minecraft:iron_sword"
+      "item": "minecraft:golden_sword",
+      "group": "fire_sword"
     },
     {
       "item": "minecraft:lava_bucket"
@@ -10,7 +12,6 @@
   ],
   "result":
   {
-    "item": "swordtutorial:flame_sword",
-    "count": 1
+    "item": "swordtutorial:fire_sword"
   }
 }

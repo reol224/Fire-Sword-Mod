@@ -22,12 +22,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("firesword")
+@Mod(ExampleMod.MOD_ID)
 public class ExampleMod {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MOD_ID = "swordtutorial";
 
-    static Item FIRE_SWORD = register(new FireSword( new Item.Properties().group(ItemGroup.COMBAT)));
+    static Item FIRE_SWORD = new FireSword( new Item.Properties().group(ItemGroup.COMBAT));
+
+    private static Item register(FireSword fireSword) {
+        return Registry.register(Registry.ITEM, fireSword.getRegistryName(), fireSword);
+    }
 
     public ExampleMod() {
         // Register the setup method for modloading
@@ -50,9 +55,6 @@ public class ExampleMod {
 
     }
 
-    private static Item register(FireSword fireSword) {
-        return Registry.register(Registry.ITEM, new ResourceLocation(FireSword.REGISTRY_NAME), fireSword);
-    }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client

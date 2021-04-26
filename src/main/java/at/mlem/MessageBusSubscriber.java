@@ -8,23 +8,24 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-@SuppressWarnings("unused")
 public class MessageBusSubscriber {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-        registerRender(SwordTutorialMod.FIRE_SWORD);
+        registerRender(FireSwordMod.FIRE_SWORD);
     }
 
     private static void registerRender(Item item) {
         ModelLoader.addSpecialModel(
-                new ModelResourceLocation(item.getRegistryName(), "inventory")
+                new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory")
         );
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(SwordTutorialMod.FIRE_SWORD);
+        event.getRegistry().registerAll(FireSwordMod.FIRE_SWORD);
     }
 }

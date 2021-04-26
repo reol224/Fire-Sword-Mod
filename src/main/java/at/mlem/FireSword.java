@@ -5,7 +5,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.FireBlock;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTier;
 import net.minecraft.item.ItemUseContext;
@@ -25,12 +24,18 @@ public class FireSword extends SwordItem {
     public FireSword(Properties builder) {
         super(ItemTier.DIAMOND, ATTACK_DAMAGE, ATTACK_SPEED, builder);
 
-        this.setRegistryName(SwordTutorialMod.MOD_ID, REGISTRY_NAME);
+        this.setRegistryName(FireSwordMod.MOD_ID, REGISTRY_NAME);
 
     }
 
+    @Override
+    public boolean hasEffect(ItemStack par1ItemStack)
+    {
+        return true;
+    }
+
     /**
-     * Called when this item is used when targetting a Block
+     * Called when this item is used when targeting a Block
      */
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
@@ -39,12 +44,12 @@ public class FireSword extends SwordItem {
         if (blockstate.getBlock() == Blocks.CAMPFIRE) {
             if (!blockstate.get(CampfireBlock.LIT) && !blockstate.get(CampfireBlock.WATERLOGGED)) {
                 this.playUseSound(world, blockpos);
-                world.setBlockState(blockpos, blockstate.with(CampfireBlock.LIT, Boolean.valueOf(true)));
+                world.setBlockState(blockpos, blockstate.with(CampfireBlock.LIT, Boolean.TRUE));
                 return ActionResultType.SUCCESS;
             }
         } else {
             blockpos = blockpos.offset(context.getFace());
-            if (world.getBlockState(blockpos).isAir()) {
+            if (world.getBlockState(blockpos).isAir(world,blockpos)) {
                 this.playUseSound(world, blockpos);
                 world.setBlockState(blockpos, ((FireBlock) Blocks.FIRE).getStateForPlacement(world, blockpos));
                 return ActionResultType.SUCCESS;
@@ -58,6 +63,7 @@ public class FireSword extends SwordItem {
      * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
      * the damage on the stack.
      */
+    @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         target.setFire(5);
         return super.hitEntity(stack, target, attacker);
@@ -65,7 +71,7 @@ public class FireSword extends SwordItem {
 
 
     private void playUseSound(World worldIn, BlockPos pos) {
-        worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
+        worldIn.playSound(null, pos, SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
     }
 
 }

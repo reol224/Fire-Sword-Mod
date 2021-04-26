@@ -3,7 +3,7 @@
   "group": "fire_sword",
   "ingredients": [
     {
-      "item": "minecraft:diamond_sword",
+      "item": "minecraft:stone_sword",
       "group": "fire_sword"
     },
     {
@@ -12,6 +12,6 @@
   ],
   "result":
   {
-    "item": "swordtutorial:fire_sword"
+    "item": "firesword:fire_sword"
   }
 }

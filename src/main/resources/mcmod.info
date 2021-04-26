@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "fireswordmod",
+    "name": "Fire Sword Mod",
+    "description": "A fire sword mod.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["iulia"],
+    "credits": "Credit to myself bwahaha",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

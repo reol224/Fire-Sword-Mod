@@ -1,3 +1,5 @@
+[![Java CI](https://github.com/reol224/Fire-Sword-Mod/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/reol224/Fire-Sword-Mod/actions/workflows/gradle.yml)
+
 ### What does this mod do? ###
 1. It's a fire sword.
 2. It sets stuff on fire.
